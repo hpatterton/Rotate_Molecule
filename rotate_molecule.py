@@ -44,6 +44,7 @@ if __name__ == "__main__":
 	screen_height = 600
 	screen = pygame.display.set_mode((screen_width, screen_height))
 	# read molecule coordinates and connectivity lists
+    # chabe the path to reflect the location of your PDB file
 	path = 'C:\\Users\\hpatterton\\Documents\\CBCB\\Degrees\\BSc Hons\\2021\\Docking\\TSA_2_1.pdb'
 	pdb_file = PDB(path)
 	pdb_file.ReadFile(path)
