@@ -9,6 +9,7 @@
 
 import pygame
 import numpy
+import math
 from class_PDB import PDB
 
 def rotate_array(vector_array, angle, axis):
@@ -37,6 +38,9 @@ def draw_molecule(coordinates, connections, screen, scale, offset, forecolour):
 			end = connections[i][j]
 			pygame.draw.line(screen, forecolour, (scale*coordinates[start][0]+offset[0],scale*coordinates[start][1]+offset[1]),(scale*coordinates[end][0]+offset[0],scale*coordinates[end][1]+offset[1]),1)
 
+def deg_to_rad(value):
+	return 2*math.pi*value/360
+
 if __name__ == "__main__":
 
 	pygame.init()
@@ -44,7 +48,7 @@ if __name__ == "__main__":
 	screen_height = 600
 	screen = pygame.display.set_mode((screen_width, screen_height))
 	# read molecule coordinates and connectivity lists
-    # chabe the path to reflect the location of your PDB file
+    # change the path to reflect the location of your PDB file
 	path = 'C:\\Users\\hpatterton\\Documents\\CBCB\\Degrees\\BSc Hons\\2021\\Docking\\TSA_2_1.pdb'
 	pdb_file = PDB(path)
 	pdb_file.ReadFile(path)
